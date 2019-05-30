@@ -188,7 +188,7 @@ def find_disk_dev_for_disk_bus(mapping, bus,
     devs = range(max_dev)
 
     for idx in devs:
-        disk_dev = dev_prefix + chr(ord('a') + idx)
+        disk_dev = block_device.generate_device_name(dev_prefix, idx)
         if not has_disk_dev(mapping, disk_dev):
             if disk_dev not in assigned_devices:
                 return disk_dev
