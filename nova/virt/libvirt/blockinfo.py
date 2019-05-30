@@ -159,9 +159,10 @@ def get_dev_count_for_disk_bus(disk_bus):
 
     if disk_bus == "ide":
         return 4
+    elif disk_bus == "scsi":
+        return 256
     else:
         return 26
-
 
 def find_disk_dev_for_disk_bus(mapping, bus,
                                assigned_devices=None):
